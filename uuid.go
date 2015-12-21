@@ -33,10 +33,13 @@ const (
 
 var rander = rand.Reader // random function
 
+var UUID1 = NewUUID
+var UUID4 = NewRandom
+
 // New returns a new random (version 4) UUID as a string.  It is a convenience
 // function for NewRandom().String().
 func New() string {
-	return NewRandom().String()
+	return UUID4().String()
 }
 
 // Parse decodes s into a UUID or returns nil.  Both the UUID form of
